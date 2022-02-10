@@ -37,7 +37,7 @@ public class SwaggerConfig {
                 "Returns List Of Vehicles with thier locations and Maps.",
                 "1.0",
                 "http://www.udacity.com/tos",
-                new Contact("Olacios ", "www.udacity.com", "myeaddress@udacity.com"),
+                new Contact("Mahdi ", "www.udacity.com", "mahdi.com"),
                 "License of API", "http://www.udacity.com/license", Collections.emptyList());
     }
     @Bean
