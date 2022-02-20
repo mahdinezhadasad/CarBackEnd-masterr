@@ -41,12 +41,21 @@ public class CarService {
                     .map(carToBeUpdated -> {
                         carToBeUpdated.setDetails(car.getDetails());
                         carToBeUpdated.setLocation(car.getLocation());
+                        carToBeUpdated.setCondition(car.getCondition());
                         return carRepository.save(carToBeUpdated);
                     }).orElseThrow(CarNotFoundException::new);
         }
 
         return carRepository.save(car);
     }
+
+
+
+
+
+
+
+
 
     public void delete(Long id) throws ChangeSetPersister.NotFoundException {
         Optional<Car> carOptional = Optional.ofNullable(carRepository.getById(id));
