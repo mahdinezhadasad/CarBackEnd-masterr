@@ -130,6 +130,38 @@ public class CarControllerTest {
 
     }
 
+    @Test
+    public void updateCar() throws Exception{
+
+        Car car = getCar();
+        Details details = new Details();
+        Manufacturer manufacturer = new Manufacturer(101, "Chevrolet");
+        car.setLocation(new Location(40.7306101, -73.935243));
+        car.setCondition(Condition.NEW);
+        details.setManufacturer(manufacturer);
+        details.setModel("Impalaa");
+        details.setMileage(32280);
+        details.setExternalColor("whitee");
+        details.setBody("sedann");
+        details.setEngine("3.6L V66");
+        details.setFuelType("dd");
+        details.setModelYear(2018);
+        details.setProductionYear(2018);
+        details.setNumberOfDoors(4);
+        car.setDetails(details);
+
+        mvc.perform(
+                        post(new URI("/cars"))
+                                .content(json.write(car).getJson())
+                                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                                .accept(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isCreated());
+
+
+
+
+    }
+
 
 
     /**
